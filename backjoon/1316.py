@@ -9,8 +9,7 @@ for _ in range(n):
     appeared = [current, ]
 
     is_group_word = True
-    for i in range(1, len(string)):
-        char = string[i]
+    for char in string[1:]:
         if char != current:
             if char not in appeared:
                 current = char
