@@ -5,25 +5,21 @@ def solution1():
 
     answer = "z" * len(string)
 
-    def is_left_string_first(left, right):
-        result = False
-        for i in range(len(left)):
-            if ord(left[i]) < ord(right[i]):
-                result = True
-                break
-            elif ord(left[i]) > ord(right[i]):
-                result = False
-                break
-        return result
+    def get_alphabetic_lower_string(one, the_other):
+        for i in range(len(one)):
+            if ord(one[i]) < ord(the_other[i]):
+                return one
+            elif ord(one[i]) > ord(the_other[i]):
+                return the_other
+        return one
 
-    for i in range(1, len(string) - 2):
+    for i in range(1, len(string) - 1):
         for j in range(i + 1, len(string)):
             s1 = ''.join(reversed(string[:i]))
             s2 = ''.join(reversed(string[i:j]))
             s3 = ''.join(reversed(string[j:]))
             new_string = s1 + s2 + s3
-            if is_left_string_first(new_string, answer):
-                answer = new_string
+            answer = get_alphabetic_lower_string(answer, new_string)
 
     print(answer)
 
@@ -33,7 +29,7 @@ def solution2():
 
     answer = "z" * len(string)
 
-    for i in range(1, len(string) - 2):
+    for i in range(1, len(string) - 1):
         for j in range(i + 1, len(string)):
             s1 = string[:i][::-1]
             s2 = string[i:j][::-1]
@@ -45,5 +41,5 @@ def solution2():
 
 
 if __name__ == '__main__':
-    # solution1()
-    solution2()
+    solution1()
+    # solution2()
