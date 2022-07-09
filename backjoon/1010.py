@@ -14,5 +14,5 @@ for i in range(1, 30):
 
 length = int(input())
 for _ in range(length):
-    (N, M) = map(int, input().split(" "))
+    N, M = map(int, input().split(" "))
     print(dp[N][M])

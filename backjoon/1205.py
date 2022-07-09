@@ -1,6 +1,6 @@
 # https://www.acmicpc.net/problem/1205
 
-(n, score, p) = map(int, input().split(" "))
+n, score, p = map(int, input().split(" "))
 
 # 예외 케이스 처리
 if n == 0:

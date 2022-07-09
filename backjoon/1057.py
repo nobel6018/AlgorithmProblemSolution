@@ -1,6 +1,6 @@
 # https://www.acmicpc.net/problem/1057
 
-(n, player1, player2) = map(int, input().split(" "))
+n, player1, player2 = map(int, input().split(" "))
 
 answer = 0
 while True:

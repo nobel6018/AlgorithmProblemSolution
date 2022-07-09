@@ -2,7 +2,7 @@
 
 from collections import deque
 
-(n, m) = map(int, input().split(" "))
+n, m = map(int, input().split(" "))
 removes = list(map(int, input().split(" ")))
 
 queue = deque()

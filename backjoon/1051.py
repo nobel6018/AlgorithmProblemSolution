@@ -1,6 +1,6 @@
 # https://www.acmicpc.net/problem/1051
 
-(n, m) = map(int, input().split(" "))
+n, m = map(int, input().split(" "))
 maps = []
 for _ in range(n):
     maps.append(list(map(int, list(input()))))

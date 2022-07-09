@@ -1,6 +1,6 @@
 # https://www.acmicpc.net/problem/1312
 
-(a, b, n) = map(int, input().split(" "))
+a, b, n = map(int, input().split(" "))
 
 modulus = a % b
 

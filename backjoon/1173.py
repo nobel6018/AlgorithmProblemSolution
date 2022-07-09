@@ -1,6 +1,6 @@
 #  https://www.acmicpc.net/problem/1173
 
-(N, m, M, T, R) = map(int, input().split(" "))
+N, m, M, T, R = map(int, input().split(" "))
 
 if M < m + T:
     print(-1)
