@@ -5,20 +5,18 @@ input = sys.stdin.readline
 n, m = map(int, input().split())
 tteuks = list(map(int, input().split()))
 
-candidate_lengths = list(range(min(tteuks), max(tteuks) + 1))
-start = 0
-end = len(candidate_lengths) - 1
+start = min(tteuks)
+end = max(tteuks)
 
 while start <= end:
     middle = (start + end) // 2
-    current_length = candidate_lengths[middle]
 
     total = 0
     for tteuk in tteuks:
-        total += 0 if tteuk <= current_length else tteuk - current_length
+        total += 0 if tteuk <= middle else tteuk - middle
 
     if total == m:
-        print(candidate_lengths[middle])
+        print(middle)
         exit(0)
     elif total < m:
         end = middle - 1
