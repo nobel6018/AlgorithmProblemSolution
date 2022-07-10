@@ -1,23 +1,23 @@
 # https://www.acmicpc.net/problem/1072
+import sys
+
+input = sys.stdin.readline
 
 x, y = map(int, input().split())
 z = int(100 * y / x)
 
-if z == 100:
-    print(-1)
-    exit(0)
+start = 0
+end = x
 
-play_count = 0
-nx = x
-ny = y
-nz = z
+answer = -1
+while start <= end:
+    middle = (start + end) // 2
+    new_z = int(100 * (y + middle) / (x + middle))
 
-while True:
-    play_count += 1
-    nx += 1
-    ny += 1
-    nz = int(100 * ny / nx)
-    if nz != z:
-        break
+    if new_z > z:
+        answer = middle
+        end = middle - 1
+    else:
+        start = middle + 1
 
-print(play_count)
+print(answer)
