@@ -8,6 +8,7 @@ tteuks = list(map(int, input().split()))
 start = min(tteuks)
 end = max(tteuks)
 
+answer = 0
 while start <= end:
     middle = (start + end) // 2
 
@@ -16,12 +17,19 @@ while start <= end:
         total += 0 if tteuk <= middle else tteuk - middle
 
     if total == m:
-        print(middle)
-        exit(0)
-    elif total < m:
-        end = middle - 1
-    else:
+        answer = middle
+        break
+    elif total > m:
+        answer = middle
         start = middle + 1
+    else:
+        end = middle - 1
 
+print(answer)
+
+# [input]
 # 4 6
 # 19 15 10 17
+
+# [expectation]
+# 15
