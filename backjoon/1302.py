@@ -17,6 +17,6 @@ for book in books:
         max_sold_count = max(max_sold_count, books[book])
         max_sold_book_name = book
     elif max_sold_count == books[book]:
-        max_sold_book_name = [max_sold_book_name, book]
+        max_sold_book_name = sorted([max_sold_book_name, book])[0]
 
 print(max_sold_book_name)
