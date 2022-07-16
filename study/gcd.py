@@ -17,3 +17,6 @@ def gcd(a, b):
 
 
 print(gcd(192, 162))
+
+# 첫 호출 때 a, b = b, a로 변경되어서 처리됨
+print(gcd(162, 192))
