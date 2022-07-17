@@ -7,9 +7,10 @@ for _ in range(n):
     graph.append(list(map(int, input())))
 
 
-def bfs(graph):
+def bfs(graph, start_row, start_col):
     # row, col, step
-    queue = deque([(0, 0)])
+    queue = deque()
+    queue.append((start_row, start_col))
 
     # 아래, 위, 오른쪽, 왼쪽
     dy = [1, -1, 0, 0]
@@ -28,7 +29,7 @@ def bfs(graph):
     return graph[n - 1][m - 1]
 
 
-print(bfs(graph))
+print(bfs(graph, 0, 0))
 
 # 5 6
 # 101010
