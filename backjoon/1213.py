@@ -20,14 +20,14 @@ for key in keys:
             exit(0)
 
 answer = ""
+temp = ""
 for key in keys:
     count = characters[key] // 2
-    answer += key * count
+    temp += key * count
     characters[key] = int(characters[key] / 2)
+answer += temp
 if odd_char != "":
     answer += odd_char
-for key in keys[::-1]:
-    count = characters[key]
-    answer += key * count
+answer += temp[::-1]
 
 print(answer)
