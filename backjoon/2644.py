@@ -16,15 +16,19 @@ for _ in range(m):
     graph[y][x] = 1
 
 # (node, cost)
-queue = deque([(start_node, 1)])
+queue = deque([(start_node, 0)])
+visited = [False] * (n + 1)
+
 while queue:
     node, cost = queue.popleft()
-    for i in range(n + 1):
-        if graph[node][i] == 1:
-            if i == end_node:
-                print(cost)
+    for target in range(n + 1):
+        if graph[node][target] == 1 and not visited[target]:
+            if target == end_node:
+                print(cost + 1)
                 exit(0)
-            graph[node][i] = cost + 1
-            queue.append((i, cost + 1))
+
+            graph[node][target] = cost + 1
+            visited[target] = True
+            queue.append((target, cost + 1))
 
 print(-1)
