@@ -35,7 +35,7 @@ def get_costs_of_skus(graph: List[List[int]], targets: List[Point], start: Point
             new_row = row + dy[i]
             new_col = col + dx[i]
 
-            if 0 <= new_row <= len(graph) and 0 <= new_col <= len(graph[0]):
+            if 0 <= new_row < len(graph) and 0 <= new_col < len(graph[0]):
                 if not visited[new_row][new_col]:
                     visited[new_row][new_col] = True
                     graph[new_row][new_col] = graph[row][col] + 1
