@@ -1,9 +1,10 @@
 # https://www.acmicpc.net/problem/1124
+from typing import List
 
 a, b = map(int, input().split())
 
 
-def eratosthenes_sieve(n):
+def eratosthenes_sieve(n: int) -> List[int]:
     sieve = [True] * (n + 1)
     sieve[0] = False
     sieve[1] = False
@@ -28,7 +29,7 @@ def is_prime(number: int) -> bool:
     return True
 
 
-def is_under_prime(prime_numbers, number):
+def is_under_prime(prime_numbers: List[int], number: int) -> bool:
     count = 0
     for prime in prime_numbers:
         if number == 1:
