@@ -17,9 +17,6 @@ def eratosthenes_sieve(n):
     return [i for i in range(n + 1) if sieve[i] is True]
 
 
-prime_numbers = eratosthenes_sieve(b)
-
-
 def is_prime(number: int) -> bool:
     if number == 1:
         return False
@@ -43,6 +40,8 @@ def is_under_prime(prime_numbers, number):
 
     return is_prime(count)
 
+
+prime_numbers = eratosthenes_sieve(b)
 
 answer = 0
 for i in range(a, b + 1):
