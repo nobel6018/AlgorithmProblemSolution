@@ -10,7 +10,7 @@ def eratosthenes_sieve(n):
     until = int(n ** 0.5)
     for i in range(until + 1):
         if sieve[i] is True:
-            for j in range(i + i, n, i):
+            for j in range(i + i, n + 1, i):
                 sieve[j] = False
 
     prime_numbers = [i for i in range(n + 1) if sieve[i] is True]
@@ -19,3 +19,4 @@ def eratosthenes_sieve(n):
 
 if __name__ == '__main__':
     print(eratosthenes_sieve(97))
+    print(eratosthenes_sieve(4))
