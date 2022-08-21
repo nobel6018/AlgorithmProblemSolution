@@ -34,17 +34,9 @@ def logic(two_dimension, result):
     else:
         side = len(two_dimension) // 3
 
-        logic([two_dimension[i][:side] for i in range(side)], result)
-        logic([two_dimension[i][side:2 * side] for i in range(side)], result)
-        logic([two_dimension[i][2 * side: 3 * side] for i in range(side)], result)
-
-        logic([two_dimension[i][:side] for i in range(side, 2 * side)], result)
-        logic([two_dimension[i][side:2 * side] for i in range(side, 2 * side)], result)
-        logic([two_dimension[i][2 * side:3 * side] for i in range(side, 2 * side)], result)
-
-        logic([two_dimension[i][:side] for i in range(2 * side, 3 * side)], result)
-        logic([two_dimension[i][side: 2 * side] for i in range(2 * side, 3 * side)], result)
-        logic([two_dimension[i][2 * side: 3 * side] for i in range(2 * side, 3 * side)], result)
+        for i in range(3):
+            for j in range(3):
+                logic([two_dimension[row][i * side: (i + 1) * side] for row in range(j * side, (j + 1) * side)], result)
 
 
 logic(paper, result)
