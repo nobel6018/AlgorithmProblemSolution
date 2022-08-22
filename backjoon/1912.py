@@ -7,11 +7,10 @@ input = sys.stdin.readline
 n = int(input())
 numbers = list(map(int, input().split()))
 
-length = len(numbers)
-total = [0] * length
+total = [0] * n
 total[-1] = numbers[-1]
 
-for i in range(length - 2, -1, -1):
+for i in range(n - 2, -1, -1):
     if total[i + 1] > 0:
         total[i] = numbers[i] + total[i + 1]
     else:
