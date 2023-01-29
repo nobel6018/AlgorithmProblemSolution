@@ -6,7 +6,7 @@ n, r, c = map(int, input().split())
 
 
 def new_point(point, n):
-    return int(point - 2 ** (n - 1))
+    return point - 2 ** (n - 1)
 
 
 def dnc(n, r, c):
