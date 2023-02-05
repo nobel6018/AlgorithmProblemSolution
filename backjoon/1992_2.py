@@ -27,3 +27,16 @@ def dnc(image, n, row_start, col_start):
 
 
 print(dnc(image, n, 0, 0))
+
+# 반례
+# 4
+# 1010
+# 1010
+# 1010
+# 1010
+
+# 이 풀이에서의 결과
+# (1010)
+
+# expectation
+# ((1010)(1010)(1010)(1010))
