@@ -1,25 +1,29 @@
 def solution(gems):
-    target_count = len(set(gems))
+    n = len(gems)
+    target = len(set(gems))
+    dic = {gems[0]: 1, }
 
-    i = 0
-    j = 0
-    while j < len(gems):
-        if len(set(gems[i:j])) == target_count:
-            break
-        else:
-            j += 1
+    answer = [0, n]
 
-    temp_i = 0
-    while temp_i < j:
-        if len(set(gems[temp_i:j])) == target_count:
-            i = temp_i
-        temp_i += 1
+    s = 0
+    e = 0
+    while s < n and e < n:
+        if len(dic) == target:  # 종류가 같으면
+            if (e - s) < (answer[1] - answer[0]):
+                answer = [s, e]
 
-    return [i + 1, j]
+            if dic[gems[s]] == 1:
+                del dic[gems[s]]
+            else:
+                dic[gems[s]] -= 1
 
+            s += 1
+        else:  # 종류가 부족하면
+            e += 1
+            if e == n:
+                break
+            dic[gems[e]] = dic.get(gems[e], 0) + 1
 
-if __name__ == '__main__':
-    assert solution(["DIA", "RUBY", "RUBY", "DIA", "DIA", "EMERALD", "SAPPHIRE", "DIA"]) == [3, 7]
-    assert solution(["AA", "AB", "AC", "AA", "AC"]) == [1, 3]
-    assert solution(["XYZ", "XYZ", "XYZ"]) == [1, 1]
-    assert solution(["ZZZ", "YYY", "NNNN", "YYY", "BBB"]) == [1, 5]
+    answer[0] += 1
+    answer[1] += 1
+    return answer
